@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { ICarousel } from '../carousel/carousel.interface';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -7,15 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   constructor() {}
-  list = [
-    {
-      url: 'https://picsum.photos/200/300',
-      title: 'teste 1',
-    },
-    {
-      url: 'https://picsum.photos/200/300',
-      title: 'teste 2',
-    },
-  ];
-  ngOnInit() {}
+  list: ICarousel[] = [];
+  ngOnInit() {
+    for (let index = 0; index < 10; index++) {
+      this.list.push({
+        url: this.generateRandomImage(),
+        title: `Image ${index + 1}`,
+      });
+    }
+  }
+  generateRandomImage(): string {
+    const id = Math.floor(Math.random() * 1000);
+    return `https://picsum.photos/600/600?random=${id}`;
+  }
+  private mouseCoordinatesSubject = new BehaviorSubject<{
+    x: number;
+    y: number;
+  }>({ x: 0, y: 0 });
+  mouseCoordinates$: Observable<{ x: number; y: number }> =
+    this.mouseCoordinatesSubject.asObservable();
+  @HostListener('mousemove', ['$event'])
+  onMouseMove(event: MouseEvent): void {
+    const coordinates = { x: event.clientX, y: event.clientY };
+    this.mouseCoordinatesSubject.next(coordinates);
+  }
 }

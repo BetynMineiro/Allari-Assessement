@@ -3,46 +3,98 @@
   <div class="card highlight-card card-large">
     <span>Carlos Alberto Pereira da Silva</span>
   </div>
+  <div class="h-[32rem] my-10 w-full">
+    <div class="grid grid-cols-3 gap-4 h-full w-full place-content-center">
+      <div class="grid grid-cols-2">
+        <div class="h-[22rem] bg-[blue] rounded-l-lg">
+          <div class="card card-position-title">
+            <span>Mouse X Position(px)</span>
+          </div>
+          <div class="card card-position-height">
+            {{ (mouseCoordinates$ | async)?.x }}
+          </div>
+        </div>
+        <div class="h-[22rem] bg-[blue] rounded-r-lg">
+          <div class="card card-position-title">
+            <span>Mouse Y Position(py)</span>
+          </div>
+          <div class="card card-position-height">
+            {{ (mouseCoordinates$ | async)?.y }}
+          </div>
+        </div>
+      </div>
+      <div>
+        <span>
+          <p>
+            That is a web application using Angular for the front-end and .NET
+            Core for the back-end. The application still fulfills all the
+            specified requirements:
+          </p>
 
-  <div class="grid grid-cols-3 gap-4 w-full py-5">
-    <div class="card">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas qui quis
-      sed reprehenderit. Corporis suscipit exercitationem accusantium, inventore
-      maiores hic eius assumenda nemo dolores incidunt obcaecati, ea molestiae
-      quo perspiciatis.
-    </div>
+          <h2>Main Page Layout</h2>
+          <ul>
+            <li>
+              The main page of the application features a website layout with a:
+            </li>
+            <ul>
+              <li>Header</li>
+              <li>Navigation bar</li>
+              <li>Content sections on the right and left</li>
+              <li>Main content area</li>
+              <li>Footer</li>
+            </ul>
+          </ul>
 
-    <app-carousel [slides]="list"></app-carousel>
+          <h2>Header Section</h2>
+          <p>
+            In the header section, there is a digital clock displaying the
+            current time, with real-time updates for seconds, minutes, and
+            hours. This clock is implemented using Angular.
+          </p>
 
-    <div class="card">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas qui quis
-      sed reprehenderit. Corporis suscipit exercitationem accusantium, inventore
-      maiores hic eius assumenda nemo dolores incidunt obcaecati, ea molestiae
-      quo perspiciatis.
+          <h2>Navigation Bar</h2>
+          <p>
+            This section prominently displays the full name of the developer. It
+            also includes a project description. Additionally, there is a
+            drop-down button that, when clicked, lists the elements requested
+            from Api. This listing is achieved through an asynchronous call
+            using Angular, communicating with the .NET Core back-end for data
+            retrieval.
+          </p>
+
+          <h2>Content on the Right</h2>
+          <p>
+            The content on the right side of the page features an image slider
+            with previous and forward buttons, allowing users to navigate
+            through a collection of images.
+          </p>
+
+          <h2>Content on the Left</h2>
+          <p>
+            On the left side of the page, there are indicators that display the
+            X and Y mouse positions on the screen, with Angular providing
+            real-time feedback to the user.
+          </p>
+
+          <h2>Footer</h2>
+          <p>
+            Finally, the footer of the page includes a link to the
+            <a href="https://allari.com/">Allari webpage</a>.
+          </p>
+        </span>
+      </div>
+      <app-carousel class="col-span-1" [slides]="list"></app-carousel>
     </div>
   </div>
-
   <!-- Footer -->
-  <footer class="card-container my-5">
-    <a class="card" href="https://allari.com/" target="_blank" rel="noopener">
+  <footer class="card-container my-5 bg-[#ddd] w-full rounded-lg">
+    <a
+      class="card card-link"
+      href="https://allari.com/"
+      target="_blank"
+      rel="noopener"
+    >
       Allari page
     </a>
   </footer>
-
-  <svg
-    id="clouds"
-    xmlns="http://www.w3.org/2000/svg"
-    width="2611.084"
-    height="485.677"
-    viewBox="0 0 2611.084 485.677"
-  >
-    <title>Gray Clouds Background</title>
-    <path
-      id="Path_39"
-      data-name="Path 39"
-      d="M2379.709,863.793c10-93-77-171-168-149-52-114-225-105-264,15-75,3-140,59-152,133-30,2.83-66.725,9.829-93.5,26.25-26.771-16.421-63.5-23.42-93.5-26.25-12-74-77-130-152-133-39-120-212-129-264-15-54.084-13.075-106.753,9.173-138.488,48.9-31.734-39.726-84.4-61.974-138.487-48.9-52-114-225-105-264,15a162.027,162.027,0,0,0-103.147,43.044c-30.633-45.365-87.1-72.091-145.206-58.044-52-114-225-105-264,15-75,3-140,59-152,133-53,5-127,23-130,83-2,42,35,72,70,86,49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33,61.112,8.015,113.854-5.72,150.492-29.764a165.62,165.62,0,0,0,110.861-3.236c47,94,178,113,251,33,31.385,4.116,60.563,2.495,86.487-3.311,25.924,5.806,55.1,7.427,86.488,3.311,73,80,204,61,251-33a165.625,165.625,0,0,0,120,0c51,13,108,15,157-5a147.188,147.188,0,0,0,33.5-18.694,147.217,147.217,0,0,0,33.5,18.694c49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33C2446.709,1093.793,2554.709,922.793,2379.709,863.793Z"
-      transform="translate(142.69 -634.312)"
-      fill="#eee"
-    />
-  </svg>
 </div>

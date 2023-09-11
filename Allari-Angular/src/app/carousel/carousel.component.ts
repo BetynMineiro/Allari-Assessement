@@ -13,17 +13,17 @@ export class CarouselComponent implements OnInit, OnDestroy {
   timeoutId?: number;
 
   ngOnInit(): void {
-    // this.resetTimer();
+    this.resetTimer();
   }
   ngOnDestroy() {
-    // window.clearTimeout(this.timeoutId);
+    window.clearTimeout(this.timeoutId);
   }
-  // resetTimer() {
-  //   if (this.timeoutId) {
-  //     window.clearTimeout(this.timeoutId);
-  //   }
-  //   this.timeoutId = window.setTimeout(() => this.goToNext(), 30000);
-  // }
+  resetTimer() {
+    if (this.timeoutId) {
+      window.clearTimeout(this.timeoutId);
+    }
+    this.timeoutId = window.setTimeout(() => this.goToNext(), 20000);
+  }
 
   goToPrevious(): void {
     const isFirstSlide = this.currentIndex === 0;
@@ -31,7 +31,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
       ? this.slides.length - 1
       : this.currentIndex - 1;
 
-    // this.resetTimer();
+    this.resetTimer();
     this.currentIndex = newIndex;
   }
 
@@ -39,12 +39,12 @@ export class CarouselComponent implements OnInit, OnDestroy {
     const isLastSlide = this.currentIndex === this.slides.length - 1;
     const newIndex = isLastSlide ? 0 : this.currentIndex + 1;
 
-    // this.resetTimer();
+    this.resetTimer();
     this.currentIndex = newIndex;
   }
 
   goToSlide(slideIndex: number): void {
-    // this.resetTimer();
+    this.resetTimer();
     this.currentIndex = slideIndex;
   }
 

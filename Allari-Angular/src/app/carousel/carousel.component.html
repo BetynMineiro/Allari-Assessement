@@ -4,10 +4,7 @@
     mat-mini-fab
     (click)="goToPrevious()"
   >
-    <mat-icon
-      class="icon-size-4"
-      svgIcon="mat_solid:keyboard_arrow_left"
-    ></mat-icon>
+    <mat-icon class="icon-size-4">keyboard_arrow_left</mat-icon>
   </button>
 
   <button
@@ -15,14 +12,14 @@
     mat-mini-fab
     (click)="goToNext()"
   >
-    <mat-icon
-      class="icon-size-4"
-      svgIcon="mat_solid:keyboard_arrow_right"
-    ></mat-icon>
+    <mat-icon class="icon-size-4">keyboard_arrow_right</mat-icon>
   </button>
 
   <div
     class="slide"
-    [ngStyle]="{ 'background-image': getCurrentSlideUrl() }"
+    [ngStyle]="{
+      'background-image': getCurrentSlideUrl(),
+      'background-size': 'cover'
+    }"
   ></div>
 </div>
