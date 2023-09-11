@@ -1,0 +1,28 @@
+<div class="slider">
+  <button
+    class="bg-primary text-on-primary action-previous"
+    mat-mini-fab
+    (click)="goToPrevious()"
+  >
+    <mat-icon
+      class="icon-size-4"
+      svgIcon="mat_solid:keyboard_arrow_left"
+    ></mat-icon>
+  </button>
+
+  <button
+    class="bg-primary text-on-primary action-next"
+    mat-mini-fab
+    (click)="goToNext()"
+  >
+    <mat-icon
+      class="icon-size-4"
+      svgIcon="mat_solid:keyboard_arrow_right"
+    ></mat-icon>
+  </button>
+
+  <div
+    class="slide"
+    [ngStyle]="{ 'background-image': getCurrentSlideUrl() }"
+  ></div>
+</div>
