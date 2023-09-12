@@ -10,6 +10,11 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
   constructor() {}
   list: ICarousel[] = [];
+  foods: any[] = [
+    { value: 'steak-0', viewValue: 'Steak' },
+    { value: 'pizza-1', viewValue: 'Pizza' },
+    { value: 'tacos-2', viewValue: 'Tacos' },
+  ];
   ngOnInit() {
     for (let index = 0; index < 10; index++) {
       this.list.push({
