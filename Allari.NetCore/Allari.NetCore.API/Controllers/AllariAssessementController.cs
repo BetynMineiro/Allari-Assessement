@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Allari.NetCore.API.Controllers;
 
-[Route("[controller]")]
+[Route("api/[controller]")]
 [Produces(MediaTypeNames.Application.Json)]
 public class AllariAssessementController : Controller
 {

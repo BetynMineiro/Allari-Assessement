@@ -4,11 +4,11 @@ public class ImageInfoQueryResponse
 {
     public ImageInfoQueryResponse(string title, string url)
     {
-        Tittle = title;
+        Title = title;
         Url = url;
     }
 
     public string Url { get; set; }
 
-    public string Tittle { get; set; }
+    public string Title { get; set; }
 }
